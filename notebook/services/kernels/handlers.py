@@ -69,7 +69,6 @@ class KernelHandler(APIHandler):
         self.set_status(204)
         self.finish()
 
-    @web.authenticated
     @json_errors
     def options(self, kernel_id):
         self.set_header('Access-Control-Allow-Headers', 'accept, content-type')
@@ -92,7 +91,6 @@ class KernelActionHandler(APIHandler):
             self.write(json.dumps(model))
         self.finish()
 
-    @web.authenticated
     @json_errors
     def options(self, kernel_id, action):
         self.set_header('Access-Control-Allow-Headers', 'accept, content-type')

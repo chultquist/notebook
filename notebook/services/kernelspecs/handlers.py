@@ -64,7 +64,6 @@ class MainKernelSpecHandler(APIHandler):
         self.set_header("Content-Type", 'application/json')
         self.finish(json.dumps(model))
 
-    @web.authenticated
     @json_errors
     def options(self):
         self.finish()
